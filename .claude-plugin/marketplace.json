@@ -1,0 +1,14 @@
+{
+  "name": "lexai",
+  "owner": {
+    "name": "LEX AI GmbH",
+    "email": "support@lexai.co"
+  },
+  "plugins": [
+    {
+      "name": "lexai",
+      "source": "./plugins/lexai",
+      "description": "LEX AI regulatory and compliance research inside Claude. Sign in with your LEX AI account."
+    }
+  ]
+}

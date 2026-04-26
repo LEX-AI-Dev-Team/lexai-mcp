@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "lexai": {
+      "type": "http",
+      "url": "https://api.lexai.co/mcp"
+    }
+  }
+}
