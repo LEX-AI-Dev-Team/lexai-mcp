@@ -1,5 +1,6 @@
 {
   "name": "lexai",
+  "description": "LEX AI regulatory and compliance research connector for Claude and Microsoft Copilot.",
   "owner": {
     "name": "LEX AI GmbH",
     "email": "support@lexai.co"
