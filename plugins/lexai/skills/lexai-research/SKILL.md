@@ -9,9 +9,10 @@ You have three LEX AI tools (provided by the `lexai` MCP server). Use them in th
 
 ## 1. `search_fts(query, ...)`: start here
 
-Keyword search across LEX AI content (legal updates, summaries, regulations, acts). Use the user's terms as-is, or quoted phrases for multi-word concepts (e.g. `"data protection"`). A bare term also matches posts carrying it as a hashtag (e.g. `aml` surfaces `#aml`-tagged posts). Returns up to 50 posts with `title`, `url`, `type`, `publish_date`.
+Keyword search across LEX AI content (legal updates, summaries, regulations, acts). Use the user's terms as-is, or quoted phrases for multi-word concepts (e.g. `"data protection"`). A bare term also matches posts carrying it as a hashtag (e.g. `aml` surfaces `#aml`-tagged posts); a hashtag-only match carries no tsvector match, scores 0, and sorts below every keyword match. Returns up to 50 posts with `title`, `url`, `type`, `publish_date`, `snippet`.
 
 Optional filters:
+- `order_by`: `rank` (default) orders by tsvector match strength; `date_desc` / `date_asc` order by publish date. A "what changed this week" question wants `date_desc`, not relevance.
 - `org`: organization name (e.g. `"BaFin"`) — returns only posts from matching organizations.
 - `region`: country/region name or ISO code — e.g. `"Germany"`/`"DE"`, `"United States"`/`"US"`, `"European Union"`/`"EU"`. United Kingdom is `"United Kingdom"`/`"GB"`/`"UK"`; China is `"Mainland China"`. Unknown values return nothing.
 - `post_type`, `start_date`, `end_date`, `page_size` (≤50), `page_number`.

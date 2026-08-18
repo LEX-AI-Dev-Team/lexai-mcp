@@ -36,9 +36,9 @@ On first tool call, Claude opens the same sign-in page.
 
 ## Tools
 
-- `search_fts(query, page_size?, page_number?, post_type?, start_date?, end_date?, org?, region?)` — keyword search across LEX AI content; a bare term also matches posts tagged with it (e.g. `aml` → `#aml`). `org` filters by organization name; `region` by country/region name or ISO code (e.g. `EU`, `US`, `DE`).
+- `search_fts(query, order_by?, page_size?, page_number?, post_type?, start_date?, end_date?, org?, region?)` — keyword search across LEX AI content, ranked by tsvector match by default; `order_by=date_desc` / `date_asc` orders by publish date instead. A bare term also matches posts tagged with it (e.g. `aml` → `#aml`); those carry no tsvector match, score 0, and sort below every keyword match. `org` filters by organization name; `region` by country/region name or ISO code (e.g. `EU`, `US`, `DE`).
 - `graph_neighbors(urls, top_k?, min_similarity?)` — related posts a keyword search misses; chain after `search_fts` using the `url` values it returns.
-- `get_post_by_url(url)` — full document (title, content) by URL.
+- `get_post_by_url(url)` — full document (title, content, sources, hashtags, connections) by URL.
 
 ## Limits
 

@@ -1,6 +1,6 @@
 {
   "name": "lexai",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Search and retrieve LEX AI regulatory content (legal updates, summaries, regulations) from Claude or Copilot. OAuth login with your existing LEX AI account.",
   "author": {
     "name": "LEX AI",
